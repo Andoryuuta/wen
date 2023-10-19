@@ -1,0 +1,9 @@
+[submodule "extern/wil"]
+	path = extern/wil
+	url = https://github.com/microsoft/wil
+[submodule "extern/spdlog"]
+	path = extern/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "extern/minhook"]
+	path = extern/minhook
+	url = https://github.com/TsudaKageyu/minhook.git
