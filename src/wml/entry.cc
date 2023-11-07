@@ -120,8 +120,8 @@ EXIT_HOOK:
 // by hooking a function called in the CRT startup (GetSystemTimeAsFileTime).
 //
 // This allows us to work with both the SteamDRM and Steamless unpacked
-// binaries by detecting the first call to the hooked function _after_ the
-// executable is unpacked in memory.
+// binaries by detecting the first call to the hooked function _after_
+// the executable is unpacked in memory.
 void LoaderLockedInitialize() {
     Log::InitializePreLogger();
     auto logger = spdlog::get("PreLoader");
@@ -129,7 +129,7 @@ void LoaderLockedInitialize() {
     logger->info("Begin enabling post-unpack hooks on thread: {0}",
                  GetCurrentThreadId());
 
-    // Override the process security token that that the singleton instanciation
+    // Override the process security token that that the singleton instantiaion
     // happens, causing GetSystemTimeAsFileTime to be called pre-CRT init.
     *(uint64_t*)WML::Game::Address::PROCESS_SECURITY_COOKIE = 0x2B992DDFA232L;
 
